@@ -1,0 +1,68 @@
+[
+  {
+    "id": "CS-301",
+    "name": "Data Structures and Algorithms",
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Explain the difference between a Stack and a Queue. Provide real-world examples of each.",
+        "maxMarks": 10,
+        "rubric": [
+          { "keyword": "LIFO", "description": "Mentions Last In First Out for Stack", "weight": 2 },
+          { "keyword": "FIFO", "description": "Mentions First In First Out for Queue", "weight": 2 },
+          { "keyword": "push", "description": "Mentions push/pop operations for stack", "weight": 2 },
+          { "keyword": "enqueue", "description": "Mentions enqueue/dequeue operations for queue", "weight": 2 },
+          { "keyword": "example", "description": "Provides valid real-world examples for both", "weight": 2 }
+        ],
+        "modelAnswer": "A Stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle, where elements are inserted (push) and removed (pop) from the same end, called the top. A classic real-world example is a stack of plates or the undo function in a text editor. In contrast, a Queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. Elements are inserted at the rear (enqueue) and removed from the front (dequeue). Real-world examples include a queue of customers waiting in line or a printer queue processing print jobs."
+      },
+      {
+        "id": "Q2",
+        "text": "What is a Binary Search Tree (BST)? What is the time complexity of search, insertion, and deletion operations in the worst case and average case?",
+        "maxMarks": 10,
+        "rubric": [
+          { "keyword": "left subtree", "description": "Mentions left subtree contains smaller values", "weight": 2 },
+          { "keyword": "right subtree", "description": "Mentions right subtree contains larger values", "weight": 2 },
+          { "keyword": "O(log n)", "description": "Correct average case time complexities", "weight": 3 },
+          { "keyword": "O(n)", "description": "Correct worst case time complexities", "weight": 3 }
+        ],
+        "modelAnswer": "A Binary Search Tree (BST) is a node-based binary tree data structure where each node has a key and at most two child nodes. For any given node, all keys in its left subtree are smaller than its key, and all keys in its right subtree are larger. The average-case time complexity for search, insertion, and deletion operations is O(log n) because the height of the tree is logarithmic. In the worst-case scenario (e.g., when keys are inserted in sorted order, creating a skewed tree), these operations degrade to O(n) time complexity."
+      }
+    ]
+  },
+  {
+    "id": "PHY-102",
+    "name": "Classical Mechanics",
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "State Newton's Three Laws of Motion and provide illustrative examples for each law.",
+        "maxMarks": 10,
+        "rubric": [
+          { "keyword": "inertia", "description": "First Law: Object at rest remains at rest unless acted on by force", "weight": 3 },
+          { "keyword": "force equals mass", "description": "Second Law: F = ma or rate of change of momentum", "weight": 3 },
+          { "keyword": "action and reaction", "description": "Third Law: Every action has an equal and opposite reaction", "weight": 4 }
+        ],
+        "modelAnswer": "Newton's First Law (Law of Inertia) states that an object will remain at rest or continue to move at a constant velocity in a straight line unless acted upon by a net external force. Example: A passenger jerking forward when a moving bus brakes suddenly. Newton's Second Law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass, represented as F = ma. Example: Pushing an empty shopping cart is much easier than pushing a loaded one. Newton's Third Law states that for every action, there is an equal and opposite reaction. Example: The recoil of a fired gun, or a rocket lifting off by expelling gas downwards."
+      }
+    ]
+  },
+  {
+    "id": "BIO-205",
+    "name": "Cell Biology and Genetics",
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Describe the structure and function of Mitochondria. Why is it called the powerhouse of the cell?",
+        "maxMarks": 10,
+        "rubric": [
+          { "keyword": "double membrane", "description": "Mentions outer and inner folded membrane (cristae)", "weight": 2 },
+          { "keyword": "ATP", "description": "Mentions Adenosine Triphosphate energy synthesis", "weight": 3 },
+          { "keyword": "respiration", "description": "Mentions site of cellular respiration / Krebs cycle", "weight": 3 },
+          { "keyword": "powerhouse", "description": "Explains why the powerhouse term is used", "weight": 2 }
+        ],
+        "modelAnswer": "Mitochondria are double-membraned organelles found in the cytoplasm of most eukaryotic cells. The outer membrane is smooth, while the inner membrane is folded into numerous folds called cristae, which maximize the surface area for biochemical reactions. The primary function of mitochondria is cellular respiration, where they break down nutrients (specifically glucose) through the Krebs cycle and oxidative phosphorylation to produce Adenosine Triphosphate (ATP). ATP is the primary energy currency of the cell. Because mitochondria are responsible for generating over 90% of the cell's ATP required for cellular activities, they are widely referred to as the 'powerhouse of the cell'."
+      }
+    ]
+  }
+]

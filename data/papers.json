@@ -1,0 +1,484 @@
+[
+  {
+    "id": "paper_01",
+    "studentName": "John Doe",
+    "studentId": "STU-8821",
+    "subjectId": "CS-301",
+    "status": "graded",
+    "submissionDate": "2026-06-01",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "A stack is a linear data structure that operates under the LIFO (Last In First Out) principle. This means elements are pushed onto the top and popped off the top. A great example of a stack is the back button on a browser which pops the previous webpage off the navigation stack, or a pile of plates. On the other hand, a queue uses the FIFO (First In First Out) rule, where items enqueue at the back and dequeue from the front. Examples are printer queues and ticket counters.",
+        "score": 10,
+        "isEvaluated": true,
+        "ocrConfidence": 98.4,
+        "rubricMatches": [
+          "LIFO",
+          "FIFO",
+          "push",
+          "enqueue",
+          "example"
+        ],
+        "aiFeedback": "### AI Rubric Evaluation Details\n- **Keyword Coverage:** 5 of 5 terms matched (100%)\n- **Semantic Match Score:** 100%\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **LIFO** (*Mentions Last In First Out for Stack*).\n- **[DETECTED]** Correct reference to: **FIFO** (*Mentions First In First Out for Queue*).\n- **[DETECTED]** Correct reference to: **push** (*Mentions push/pop operations for stack*).\n- **[DETECTED]** Correct reference to: **enqueue** (*Mentions enqueue/dequeue operations for queue*).\n- **[DETECTED]** Correct reference to: **example** (*Provides valid real-world examples for both*).\n\n#### Areas for Improvement:\n- Excellent coverage! All key criteria points have been fully satisfied.\n",
+        "highlights": [
+          {
+            "text": "LIFO",
+            "type": "keyword"
+          },
+          {
+            "text": "FIFO",
+            "type": "keyword"
+          },
+          {
+            "text": "push",
+            "type": "keyword"
+          },
+          {
+            "text": "enqueue",
+            "type": "keyword"
+          },
+          {
+            "text": "example",
+            "type": "keyword"
+          }
+        ]
+      },
+      {
+        "questionId": "Q2",
+        "studentAnswer": "Binary Search Trees (BSTs) are binary trees where nodes on the left subtree are smaller than the parent node and nodes on the right subtree are larger. When we search, insert or delete nodes in a BST, it takes average time of O(log n) because we can discard half the tree at each step. But if the BST becomes skewed (like a straight line of nodes), it degrades to worst-case complexity of O(n) because we have to traverse all elements sequentially.",
+        "score": 10,
+        "isEvaluated": true,
+        "ocrConfidence": 99.1,
+        "rubricMatches": [
+          "left subtree",
+          "right subtree",
+          "O(log n)",
+          "O(n)"
+        ],
+        "aiFeedback": "### AI Rubric Evaluation Details\n- **Keyword Coverage:** 4 of 4 terms matched (100%)\n- **Semantic Match Score:** 100%\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **left subtree** (*Mentions left subtree contains smaller values*).\n- **[DETECTED]** Correct reference to: **right subtree** (*Mentions right subtree contains larger values*).\n- **[DETECTED]** Correct reference to: **O(log n)** (*Correct average case time complexities*).\n- **[DETECTED]** Correct reference to: **O(n)** (*Correct worst case time complexities*).\n\n#### Areas for Improvement:\n- Excellent coverage! All key criteria points have been fully satisfied.\n",
+        "highlights": [
+          {
+            "text": "left subtree",
+            "type": "keyword"
+          },
+          {
+            "text": "right subtree",
+            "type": "keyword"
+          },
+          {
+            "text": "O(log n)",
+            "type": "keyword"
+          },
+          {
+            "text": "O(n)",
+            "type": "keyword"
+          }
+        ]
+      }
+    ],
+    "totalScore": 20,
+    "maxMarks": 20,
+    "grade": "A+",
+    "evaluatorNotes": "Excellent, well-thought-out answers. The student clearly understands core data structure principles."
+  },
+  {
+    "id": "paper_02",
+    "studentName": "Jane Smith",
+    "studentId": "STU-8822",
+    "subjectId": "CS-301",
+    "status": "graded",
+    "submissionDate": "2026-06-01",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "A stack is where things are loaded up and taken out from the top. It uses the LIFO method. For example, if you push books on a desk, you take the top book off first. A queue is different. It is like waiting in a line at a store, where the first person in is served first. You put elements in and they go out the other end.",
+        "score": 6.5,
+        "isEvaluated": true,
+        "ocrConfidence": 95.2,
+        "rubricMatches": [
+          "LIFO",
+          "push",
+          "example"
+        ],
+        "aiFeedback": "**Strengths:**\n- Correctly identified LIFO principle and associated stack with 'push' and top-level access.\n- Provided good examples (stack of books, customer queue).\n\n**Areas for Improvement:**\n- Did not explicitly mention FIFO (First In First Out) for the queue.\n- Did not mention standard queue vocabulary such as 'enqueue' or 'dequeue' for element insertion/removal.",
+        "highlights": [
+          {
+            "text": "LIFO",
+            "type": "keyword"
+          },
+          {
+            "text": "push books",
+            "type": "keyword"
+          },
+          {
+            "text": "waiting in a line at a store",
+            "type": "keyword"
+          }
+        ]
+      },
+      {
+        "questionId": "Q2",
+        "studentAnswer": "A Binary Search Tree is a tree for searching. The left child is smaller and right is bigger. The time complexity to search is O(log n) usually. In worst case it is O(n).",
+        "score": 6.5,
+        "isEvaluated": true,
+        "ocrConfidence": 97.5,
+        "rubricMatches": [
+          "left subtree",
+          "right subtree",
+          "O(log n)",
+          "O(n)"
+        ],
+        "aiFeedback": "**Strengths:**\n- Correctly states the basic smaller/bigger relationship of nodes.\n- Provides correct complexities for normal and worst-case scenarios.\n\n**Areas for Improvement:**\n- The explanation is very brief. Explain *why* the worst case is O(n) (unbalanced/skewed structure).\n- Standardize terms (use 'subtree' instead of just 'child' to represent all descendants).",
+        "highlights": [
+          {
+            "text": "left child is smaller",
+            "type": "keyword"
+          },
+          {
+            "text": "right is bigger",
+            "type": "keyword"
+          },
+          {
+            "text": "O(log n)",
+            "type": "keyword"
+          },
+          {
+            "text": "O(n)",
+            "type": "keyword"
+          }
+        ]
+      }
+    ],
+    "totalScore": 13,
+    "maxMarks": 20,
+    "grade": "C",
+    "evaluatorNotes": "Answers are correct but lacks depth and correct vocabulary. Urged to use technical terminology in exam."
+  },
+  {
+    "id": "paper_03",
+    "studentName": "Alex Johnson",
+    "studentId": "STU-8823",
+    "subjectId": "PHY-102",
+    "status": "graded",
+    "submissionDate": "2026-06-02",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "Newton's laws are key to classical physics. \n1. First law: Law of inertia. Objects stay at rest or keep moving unless a force hits them. Example: sliding a puck on ice, it keeps sliding until friction stops it.\n2. Second law: The force is proportional to the mass and acceleration. F = ma. Example: A heavier rock needs more force to kick than a small pebble.\n3. Third law: For every action there is a reaction which is opposite and equal. Example: A rocket shoots gas out and moves up.",
+        "score": 5.2,
+        "isEvaluated": true,
+        "ocrConfidence": 96.8,
+        "rubricMatches": [
+          "inertia"
+        ],
+        "aiFeedback": "### AI SBERT + Regression Grading Details\n- **Semantic Cosine Similarity (SBERT):** 53%\n- **Length Ratio Feature:** 75%\n- **Keyword Coverage Feature:** 1 of 3 terms matched (33%)\n- **Linear Regression Prediction:** **5.2** / 10 Marks\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **inertia** (*First Law: Object at rest remains at rest unless acted on by force*).\n\n#### Areas for Improvement:\n- **[MISSING]** Should address: **force equals mass** (*Second Law: F = ma or rate of change of momentum*).\n- **[MISSING]** Should address: **action and reaction** (*Third Law: Every action has an equal and opposite reaction*).\n",
+        "highlights": [
+          {
+            "text": "inertia",
+            "type": "keyword"
+          }
+        ],
+        "pipelineLog": {
+          "fileName": "scanned-document.png",
+          "rawOcrText": "Newton's laws are key to classical physics. \n1. First law: Law of inertia. Objects stay at rest or keep moving unless a force hits them. Example: sliding a puck on ice, it keeps sliding until friction stops it.\n2. Second law: The force is proportional to the mass and acceleration. F = ma. Example: A heavier rock needs more force to kick than a small pebble.\n3. Third law: For every action there is a reaction which is opposite and equal. Example: A rocket shoots gas out and moves up.",
+          "cleanTokens": [
+            "newton",
+            "laws",
+            "are",
+            "key",
+            "classical",
+            "physics",
+            "first",
+            "law",
+            "law",
+            "inertia",
+            "objects",
+            "stay",
+            "rest",
+            "keep",
+            "moving"
+          ],
+          "sbertVectorSnippet": [
+            0.1273,
+            0.4881,
+            -0.3533,
+            -0.0139,
+            0.545
+          ],
+          "cosineSimilarity": 0.532,
+          "features": {
+            "sbertSimilarity": 0.532,
+            "lengthRatio": 0.747,
+            "keywordMatchRatio": 0.333
+          },
+          "regression": {
+            "weights": {
+              "w_similarity": 0.5,
+              "w_length": 0.2,
+              "w_keywords": 0.3
+            },
+            "bias": 0,
+            "prediction": 5.2,
+            "maxMarks": 10
+          }
+        }
+      }
+    ],
+    "totalScore": 5.2,
+    "maxMarks": 10,
+    "grade": "D",
+    "evaluatorNotes": ""
+  },
+  {
+    "id": "paper_04",
+    "studentName": "Emily Watson",
+    "studentId": "STU-8824",
+    "subjectId": "BIO-205",
+    "status": "graded",
+    "submissionDate": "2026-06-02",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "Mitochondria are the powerhouses of cells because they synthesize ATP, which provides energy. They are double-membraned. The inner membrane is folded into cristae to create more room for cellular respiration and generating energy.",
+        "score": 6.2,
+        "isEvaluated": true,
+        "ocrConfidence": 98.2,
+        "rubricMatches": [
+          "ATP",
+          "respiration",
+          "powerhouse"
+        ],
+        "aiFeedback": "### AI SBERT + Regression Grading Details\n- **Semantic Cosine Similarity (SBERT):** 64%\n- **Length Ratio Feature:** 36%\n- **Keyword Coverage Feature:** 3 of 4 terms matched (75%)\n- **Linear Regression Prediction:** **6.2** / 10 Marks\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **ATP** (*Mentions Adenosine Triphosphate energy synthesis*).\n- **[DETECTED]** Correct reference to: **respiration** (*Mentions site of cellular respiration / Krebs cycle*).\n- **[DETECTED]** Correct reference to: **powerhouse** (*Explains why the powerhouse term is used*).\n\n#### Areas for Improvement:\n- **[MISSING]** Should address: **double membrane** (*Mentions outer and inner folded membrane (cristae)*).\n",
+        "highlights": [
+          {
+            "text": "ATP",
+            "type": "keyword"
+          },
+          {
+            "text": "respiration",
+            "type": "keyword"
+          },
+          {
+            "text": "powerhouse",
+            "type": "keyword"
+          }
+        ],
+        "pipelineLog": {
+          "fileName": "scanned-document.png",
+          "rawOcrText": "Mitochondria are the powerhouses of cells because they synthesize ATP, which provides energy. They are double-membraned. The inner membrane is folded into cristae to create more room for cellular respiration and generating energy.",
+          "cleanTokens": [
+            "mitochondria",
+            "are",
+            "the",
+            "powerhouses",
+            "cells",
+            "because",
+            "they",
+            "synthesize",
+            "atp",
+            "which",
+            "provides",
+            "energy",
+            "they",
+            "are",
+            "double"
+          ],
+          "sbertVectorSnippet": [
+            -0.8851,
+            -0.0245,
+            -0.7836,
+            0.5089,
+            0.2172
+          ],
+          "cosineSimilarity": 0.6375,
+          "features": {
+            "sbertSimilarity": 0.6375,
+            "lengthRatio": 0.36,
+            "keywordMatchRatio": 0.75
+          },
+          "regression": {
+            "weights": {
+              "w_similarity": 0.5,
+              "w_length": 0.2,
+              "w_keywords": 0.3
+            },
+            "bias": 0,
+            "prediction": 6.2,
+            "maxMarks": 10
+          }
+        }
+      }
+    ],
+    "totalScore": 6.2,
+    "maxMarks": 10,
+    "grade": "C",
+    "evaluatorNotes": ""
+  },
+  {
+    "id": "paper_05",
+    "studentName": "Marcus Aurelius",
+    "studentId": "STU-8825",
+    "subjectId": "CS-301",
+    "status": "evaluated",
+    "submissionDate": "2026-06-03",
+    "imagePath": "/uploads/marcus_answer.png",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "A stack is a linear structure based on LIFO (Last In First Out). You insert and remove from the top, using push and pop. An example is history buttons in browsers. A queue is FIFO (First In First Out) where items insert at rear (enqueue) and leave front (dequeue). Examples: lines at checkout counters.",
+        "score": 10,
+        "isEvaluated": true,
+        "ocrConfidence": 92.4,
+        "rubricMatches": [
+          "LIFO",
+          "FIFO",
+          "push",
+          "enqueue",
+          "example"
+        ],
+        "aiFeedback": "### AI Rubric Evaluation Details\n- **Keyword Coverage:** 5 of 5 terms matched (100%)\n- **Semantic Match Score:** 100%\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **LIFO** (*Mentions Last In First Out for Stack*).\n- **[DETECTED]** Correct reference to: **FIFO** (*Mentions First In First Out for Queue*).\n- **[DETECTED]** Correct reference to: **push** (*Mentions push/pop operations for stack*).\n- **[DETECTED]** Correct reference to: **enqueue** (*Mentions enqueue/dequeue operations for queue*).\n- **[DETECTED]** Correct reference to: **example** (*Provides valid real-world examples for both*).\n\n#### Areas for Improvement:\n- Excellent coverage! All key criteria points have been fully satisfied.\n",
+        "highlights": [
+          {
+            "text": "LIFO",
+            "type": "keyword"
+          },
+          {
+            "text": "FIFO",
+            "type": "keyword"
+          },
+          {
+            "text": "push",
+            "type": "keyword"
+          },
+          {
+            "text": "enqueue",
+            "type": "keyword"
+          },
+          {
+            "text": "example",
+            "type": "keyword"
+          }
+        ]
+      },
+      {
+        "questionId": "Q2",
+        "studentAnswer": "A BST is a tree where the left subtree has elements smaller than the root, and the right subtree has elements larger. Average time for search, insert, and delete is O(log n). If the tree is skewed, it takes O(n) worst-case time.",
+        "score": 10,
+        "isEvaluated": true,
+        "ocrConfidence": 91.1,
+        "rubricMatches": [
+          "left subtree",
+          "right subtree",
+          "O(log n)",
+          "O(n)"
+        ],
+        "aiFeedback": "### AI Rubric Evaluation Details\n- **Keyword Coverage:** 4 of 4 terms matched (100%)\n- **Semantic Match Score:** 100%\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **left subtree** (*Mentions left subtree contains smaller values*).\n- **[DETECTED]** Correct reference to: **right subtree** (*Mentions right subtree contains larger values*).\n- **[DETECTED]** Correct reference to: **O(log n)** (*Correct average case time complexities*).\n- **[DETECTED]** Correct reference to: **O(n)** (*Correct worst case time complexities*).\n\n#### Areas for Improvement:\n- Excellent coverage! All key criteria points have been fully satisfied.\n",
+        "highlights": [
+          {
+            "text": "left subtree",
+            "type": "keyword"
+          },
+          {
+            "text": "right subtree",
+            "type": "keyword"
+          },
+          {
+            "text": "O(log n)",
+            "type": "keyword"
+          },
+          {
+            "text": "O(n)",
+            "type": "keyword"
+          }
+        ]
+      }
+    ],
+    "totalScore": 20,
+    "maxMarks": 20,
+    "grade": "A+",
+    "evaluatorNotes": ""
+  },
+  {
+    "id": "paper_1780592464717",
+    "studentName": "Swapnil ",
+    "studentId": "STU-7814",
+    "subjectId": "BIO-205",
+    "status": "graded",
+    "submissionDate": "2026-06-04",
+    "imagePath": "/uploads/scanned-1780592464692-204788536.jpeg",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "Mitochondria are double membrane energy generators inside cells. Inner membrane folding forms cristae to facilitate cellular respiration. They generate Adenosine Triphosphate (ATP) molecules. Hence they are called powerhouses.",
+        "score": 10,
+        "isEvaluated": true,
+        "ocrConfidence": 96.12036351033024,
+        "rubricMatches": [
+          "double membrane",
+          "ATP",
+          "respiration",
+          "powerhouse"
+        ],
+        "aiFeedback": "### AI Rubric Evaluation Details\n- **Keyword Coverage:** 4 of 4 terms matched (100%)\n- **Semantic Match Score:** 100%\n\n#### Key Strengths Detected:\n- **[DETECTED]** Correct reference to: **double membrane** (*Mentions outer and inner folded membrane (cristae)*).\n- **[DETECTED]** Correct reference to: **ATP** (*Mentions Adenosine Triphosphate energy synthesis*).\n- **[DETECTED]** Correct reference to: **respiration** (*Mentions site of cellular respiration / Krebs cycle*).\n- **[DETECTED]** Correct reference to: **powerhouse** (*Explains why the powerhouse term is used*).\n\n#### Areas for Improvement:\n- Excellent coverage! All key criteria points have been fully satisfied.\n",
+        "highlights": [
+          {
+            "text": "double membrane",
+            "type": "keyword"
+          },
+          {
+            "text": "ATP",
+            "type": "keyword"
+          },
+          {
+            "text": "respiration",
+            "type": "keyword"
+          },
+          {
+            "text": "powerhouse",
+            "type": "keyword"
+          }
+        ]
+      }
+    ],
+    "totalScore": 10,
+    "maxMarks": 10,
+    "grade": "A+",
+    "evaluatorNotes": ""
+  },
+  {
+    "id": "paper_1781706416688",
+    "studentName": "Uploaded Student",
+    "studentId": "STU-6306",
+    "subjectId": "CS-301",
+    "status": "pending",
+    "submissionDate": "2026-06-17",
+    "imagePath": "/uploads/scanned-1781706416684-806337909.jpeg",
+    "answers": [
+      {
+        "questionId": "Q1",
+        "studentAnswer": "A stack is a linear collection working with LIFO model, push to insert and pop to delete. For example, browser back buttons. A queue is FIFO where we enqueue at back and dequeue at front, like people waiting at a bus stop.",
+        "score": 0,
+        "isEvaluated": false,
+        "ocrConfidence": 89.47997456825019,
+        "rubricMatches": [],
+        "aiFeedback": "",
+        "highlights": []
+      },
+      {
+        "questionId": "Q2",
+        "studentAnswer": "A Binary Search Tree has nodes where the left child key is smaller and right is bigger. The average time for insert, search and delete is O(log n) as we split search space. In worst cases it degrades to O(n) due to a skewed chain of single child nodes.",
+        "score": 0,
+        "isEvaluated": false,
+        "ocrConfidence": 89.96487899168484,
+        "rubricMatches": [],
+        "aiFeedback": "",
+        "highlights": []
+      }
+    ],
+    "totalScore": 0,
+    "maxMarks": 20,
+    "grade": "F",
+    "evaluatorNotes": ""
+  }
+]

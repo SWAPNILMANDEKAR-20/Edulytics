@@ -1,0 +1,90 @@
+[
+  {
+    "email": "e.vance@aegiseval.com",
+    "password": "Password123!",
+    "role": "professor",
+    "fullName": "Dr. Evelyn Vance",
+    "department": "Cell Biology and Genetics",
+    "facultyId": "FAC-8812",
+    "designation": "Senior Evaluator",
+    "yearsOfExperience": 12,
+    "subjectsTeaching": [
+      "BIO-205",
+      "BIO-101"
+    ],
+    "phoneNumber": "+1 (555) 019-2834"
+  },
+  {
+    "email": "john.doe@aegiseval.com",
+    "password": "Password123!",
+    "role": "student",
+    "fullName": "John Doe",
+    "department": "Computer Science & Eng",
+    "rollNumber": "CS24B1001",
+    "semester": "4",
+    "enrollmentYear": "2024",
+    "phoneNumber": "+1 (555) 014-9988"
+  },
+  {
+    "email": "swapnil.mandekar241@vit.edu",
+    "password": "Swapnil@20",
+    "role": "student",
+    "fullName": "Swapnil Mandekar",
+    "department": "CS(AIML)",
+    "phoneNumber": "9604599027",
+    "rollNumber": "12415088",
+    "semester": "5",
+    "enrollmentYear": "2024"
+  },
+  {
+    "email": "nupurlade01@gmail.com",
+    "password": "NupurLade",
+    "role": "professor",
+    "fullName": "Nupur Lade",
+    "department": "IT",
+    "phoneNumber": "789456213",
+    "facultyId": "1238564",
+    "designation": "Professor",
+    "yearsOfExperience": 5
+  },
+  {
+    "email": "nupur.lade24@vit.edu",
+    "password": "NupurLade01",
+    "role": "student",
+    "fullName": "Nupur",
+    "department": "CSE",
+    "phoneNumber": "9874563210",
+    "rollNumber": "123456789",
+    "semester": "4",
+    "enrollmentYear": "2024",
+    "college": "VIT"
+  },
+  {
+    "email": "sidrajahangir93@gmail.com",
+    "password": "Sidra@123",
+    "role": "professor",
+    "fullName": "Sidra",
+    "department": "CS-AIML",
+    "phoneNumber": "7894561230",
+    "facultyId": "12385964",
+    "designation": "Associate Professor",
+    "yearsOfExperience": 4,
+    "subjectsTeaching": [
+      "CS",
+      "AI",
+      "ML"
+    ]
+  },
+  {
+    "email": "vallari@gmail.com",
+    "password": "Vallari@21",
+    "role": "student",
+    "fullName": "Vallari",
+    "department": "CSE",
+    "phoneNumber": "98745621230",
+    "rollNumber": "123456789",
+    "semester": "6",
+    "enrollmentYear": "2025",
+    "college": "IIT Bombay"
+  }
+]

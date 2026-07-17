@@ -1,0 +1,20 @@
+[
+  {
+    "id": "mock-exam-1",
+    "subject_id": "CS-301",
+    "title": "Data Structures Exam",
+    "evaluation_type": "descriptive",
+    "is_answer_key_confirmed": true
+  },
+  {
+    "id": "mock-exam-2",
+    "subject_id": "CS-301",
+    "title": "Data Structures OMR Exam",
+    "evaluation_type": "omr",
+    "is_answer_key_confirmed": true,
+    "total_questions": 15,
+    "marks_per_question": 1.0,
+    "negative_marking": 0.25,
+    "template_id": "OMR-101"
+  }
+]
