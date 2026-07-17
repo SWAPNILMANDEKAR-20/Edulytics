@@ -5,6 +5,7 @@ import {
   Sliders, ArrowUpRight, Search, BookOpen, Clock, X, HelpCircle, 
   ChevronRight, Calendar, AlertTriangle, RefreshCw
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function OMREvaluation() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function OMREvaluation() {
       const headers = { 'Authorization': `Bearer ${localStorage.getItem('token') || ''}` };
       
       // Fetch subjects
-      const subRes = await fetch('/api/subjects', { headers });
+      const subRes = await fetch(`${API_URL}/api/subjects`, { headers });
       if (subRes.ok) {
         const subData = await subRes.json();
         setSubjects(subData);
@@ -48,14 +49,14 @@ export default function OMREvaluation() {
       }
 
       // Fetch exams
-      const examRes = await fetch('/api/exams', { headers });
+      const examRes = await fetch(`${API_URL}/api/exams`, { headers });
       if (examRes.ok) {
         const examData = await examRes.json();
         setExams(examData.filter((e: any) => e.evaluation_type === 'omr'));
       }
 
       // Fetch papers (submissions)
-      const paperRes = await fetch('/api/papers', { headers });
+      const paperRes = await fetch(`${API_URL}/api/papers`, { headers });
       if (paperRes.ok) {
         const paperData = await paperRes.json();
         setPapers(paperData.filter((p: any) => p.evaluationType === 'omr'));
@@ -74,7 +75,7 @@ export default function OMREvaluation() {
   const handleCreateOMRExam = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/exams', {
+      const res = await fetch(`${API_URL}/api/exams`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Save, HelpCircle, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 interface OMRKeyRow {
   questionNo: number;
@@ -22,7 +23,7 @@ export default function OMRKeyConfig() {
       try {
         const token = localStorage.getItem('token') || '';
         // 1. Fetch exam configuration details
-        const examRes = await fetch('/api/exams', {
+        const examRes = await fetch(`${API_URL}/api/exams`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (examRes.ok) {

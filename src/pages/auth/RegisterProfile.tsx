@@ -4,6 +4,7 @@ import {
   GraduationCap, User, Building, Phone, ChevronLeft, 
   AlertCircle, CheckCircle2, Award, Briefcase
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function RegisterProfile() {
   const navigate = useNavigate();
@@ -95,7 +96,7 @@ export default function RegisterProfile() {
     }
 
     try {
-      const res = await fetch('/api/auth/register', {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

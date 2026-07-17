@@ -3,6 +3,7 @@ import {
   Settings, User, Sliders, Bell, Shield, Activity, 
   Save, RefreshCw, AlertTriangle, CheckCircle2, XCircle, Info
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function SettingsPage() {
   // Loading & Saving States
@@ -55,7 +56,7 @@ export default function SettingsPage() {
       const token = localStorage.getItem('token') || '';
       const headers = { 'Authorization': `Bearer ${token}` };
       
-      const res = await fetch('/api/professor/settings', { headers });
+      const res = await fetch(`${API_URL}/api/professor/settings`, { headers });
       if (res.ok) {
         const { profile, settings } = await res.json();
         if (profile) {
@@ -87,7 +88,7 @@ export default function SettingsPage() {
   const pingSystemHealth = async () => {
     setStatusLoading(true);
     try {
-      const res = await fetch('/api/health');
+      const res = await fetch(`${API_URL}/api/health`);
       if (res.ok) {
         const data = await res.json();
         setSystemStatus(data);
@@ -119,7 +120,7 @@ export default function SettingsPage() {
     setProfileSaving(true);
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/professor/profile', {
+      const res = await fetch(`${API_URL}/api/professor/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -169,7 +170,7 @@ export default function SettingsPage() {
 
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/professor/settings', {
+      const res = await fetch(`${API_URL}/api/professor/settings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -235,7 +236,7 @@ export default function SettingsPage() {
     setPasswordSaving(true);
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/professor/change-password', {
+      const res = await fetch(`${API_URL}/api/professor/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

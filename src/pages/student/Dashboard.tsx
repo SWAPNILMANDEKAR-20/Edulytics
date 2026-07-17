@@ -4,6 +4,7 @@ import {
   GraduationCap, Award, BookOpen, Clock, FileCheck, History,
   Sparkles, Mail, User, School, Calendar, ArrowRight, BookMarked, HelpCircle
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 interface SummaryMetrics {
   subjectsCount: number;
@@ -75,11 +76,11 @@ export default function StudentDashboard() {
         };
 
         const [resSummary, resActivity, resRecs, resPapers, resOMR] = await Promise.all([
-          fetch('/api/student/dashboard/summary', { headers }),
-          fetch('/api/student/dashboard/activity', { headers }),
-          fetch('/api/student/dashboard/recommendations', { headers }),
-          fetch(`/api/papers?studentId=${encodeURIComponent(roll)}`, { headers }),
-          fetch(`/api/omr/papers?studentId=${encodeURIComponent(roll)}`, { headers })
+          fetch(`${API_URL}/api/student/dashboard/summary`, { headers }),
+          fetch(`${API_URL}/api/student/dashboard/activity`, { headers }),
+          fetch(`${API_URL}/api/student/dashboard/recommendations`, { headers }),
+          fetch(`${API_URL}/api/papers?studentId=${encodeURIComponent(roll)}`, { headers }),
+          fetch(`${API_URL}/api/omr/papers?studentId=${encodeURIComponent(roll)}`, { headers })
         ]);
 
         if (resSummary.ok) setSummary(await resSummary.json());

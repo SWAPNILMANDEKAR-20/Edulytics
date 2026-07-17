@@ -4,6 +4,7 @@ import {
   FileSpreadsheet, Plus, UploadCloud, CheckCircle, ShieldAlert,
   ArrowRight, X, AlertCircle, FileText, ChevronUp, ChevronDown, Trash2
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 interface Exam {
   id: string;
@@ -47,7 +48,7 @@ export default function Exams() {
     const fetchPrefs = async () => {
       try {
         const token = localStorage.getItem('token') || '';
-        const res = await fetch('/api/professor/settings', {
+        const res = await fetch(`${API_URL}/api/professor/settings`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {
@@ -75,7 +76,7 @@ export default function Exams() {
   const fetchExamsAndSubjects = async () => {
     try {
       // Fetch subjects to populate selector
-      const subRes = await fetch('/api/subjects', {
+      const subRes = await fetch(`${API_URL}/api/subjects`, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token') || ''}` }
       });
       if (subRes.ok) {
@@ -84,7 +85,7 @@ export default function Exams() {
         if (subData.length > 0) setSelectedSubjectId(subData[0].id);
 
         // Fetch all exams
-        const examRes = await fetch('/api/exams', {
+        const examRes = await fetch(`${API_URL}/api/exams`, {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token') || ''}` }
         });
         if (examRes.ok) {
@@ -106,7 +107,7 @@ export default function Exams() {
   const handleCreateExam = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/exams', {
+      const res = await fetch(`${API_URL}/api/exams`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -189,7 +190,7 @@ export default function Exams() {
 
     setUploadingExamId(examId);
     try {
-      const res = await fetch(`/api/exams/${examId}/upload-key`, {
+      const res = await fetch(`${API_URL}/api/exams/${examId}/upload-key`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token') || ''}`

@@ -3,6 +3,7 @@ import {
   Settings, User, Bell, Shield, Info, Palette,
   Save, RefreshCw, AlertTriangle, CheckCircle2, XCircle
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function StudentSettings() {
   // Loading & Saving States
@@ -43,7 +44,7 @@ export default function StudentSettings() {
       const token = localStorage.getItem('token') || '';
       const headers = { 'Authorization': `Bearer ${token}` };
       
-      const res = await fetch('/api/student/settings', { headers });
+      const res = await fetch(`${API_URL}/api/student/settings`, { headers });
       if (res.ok) {
         const { profile, settings } = await res.json();
         if (profile) {
@@ -87,7 +88,7 @@ export default function StudentSettings() {
     setProfileSaving(true);
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/student/profile', {
+      const res = await fetch(`${API_URL}/api/student/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +140,7 @@ export default function StudentSettings() {
 
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/student/settings', {
+      const res = await fetch(`${API_URL}/api/student/settings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -202,7 +203,7 @@ export default function StudentSettings() {
     setPasswordSaving(true);
     try {
       const token = localStorage.getItem('token') || '';
-      const res = await fetch('/api/student/change-password', {
+      const res = await fetch(`${API_URL}/api/student/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

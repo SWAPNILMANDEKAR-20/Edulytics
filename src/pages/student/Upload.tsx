@@ -5,6 +5,7 @@ import {
   Cpu, Sliders, AlertCircle, FileText, Sparkles, RefreshCw, BookOpen,
   ChevronUp, ChevronDown, Trash2
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function StudentUpload() {
   const navigate = useNavigate();
@@ -29,7 +30,9 @@ export default function StudentUpload() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const res = await fetch('/api/subjects');
+        const res = await fetch(`${API_URL}/api/student/subjects`, {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        });
         if (res.ok) {
           const data = await res.json();
           setSubjects(data);

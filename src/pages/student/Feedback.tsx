@@ -4,6 +4,7 @@ import {
   FileText, Sparkles, CheckCircle2, AlertTriangle, 
   HelpCircle, RefreshCw, GraduationCap, PlayCircle, ExternalLink, Hourglass 
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 interface QuestionFeedback {
   qNo: number;
@@ -48,8 +49,8 @@ export default function StudentFeedback() {
         const headers = { 'x-user-email': email };
         
         const [resPaper, resSubjects] = await Promise.all([
-          fetch(`/api/papers/${paperId}`, { headers }),
-          fetch('/api/subjects', { headers })
+          fetch(`${API_URL}/api/papers/${paperId}`, { headers }),
+          fetch(`${API_URL}/api/...subjects`, { headers })
         ]);
 
         if (resPaper.ok && resSubjects.ok) {

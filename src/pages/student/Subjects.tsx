@@ -23,7 +23,9 @@ export default function StudentSubjects() {
   const fetchSubjects = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/subjects');
+      const res = await fetch(`${API_URL}/api/student/subjects`, {
+        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      });
       if (res.ok) {
         const data = await res.json();
         setSubjects(data);
@@ -50,7 +52,7 @@ export default function StudentSubjects() {
     }
 
     try {
-      const res = await fetch('/api/subjects/enroll', {
+      const res = await fetch(`${API_URL}/api/subjects/enroll`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: joinCode.trim().toUpperCase() })

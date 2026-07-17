@@ -5,6 +5,7 @@ import {
   Cpu, Sliders, AlertCircle, FileDown, Sparkles, RefreshCw,
   Search, Filter, ArrowRight, Check, Save, Send, BookOpen, User, ZoomIn, ZoomOut
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function EvaluationPipeline() {
   const location = useLocation();
@@ -33,7 +34,7 @@ export default function EvaluationPipeline() {
   const fetchQueue = async () => {
     try {
       setQueueLoading(true);
-      const res = await fetch('/api/papers');
+      const res = await fetch(`${API_URL}/api/papers`);
       if (res.ok) {
         setSubmissions(await res.json());
       }

@@ -6,6 +6,7 @@ import {
   ArrowUpRight, CheckCircle2, AlertTriangle, RefreshCw,
   History, Calendar, GraduationCap, ChevronRight, FileText, Check
 } from 'lucide-react';
+import { API_URL } from '../../utils/api';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -21,15 +22,15 @@ export default function Dashboard() {
     try {
       const headers = { 'Authorization': `Bearer ${localStorage.getItem('token') || ''}` };
       
-      const subRes = await fetch('/api/subjects', { headers });
+      const subRes = await fetch(`${API_URL}/api/subjects`, { headers });
       const subData = subRes.ok ? await subRes.json() : [];
       setSubjects(subData);
 
-      const examRes = await fetch('/api/exams', { headers });
+      const examRes = await fetch(`${API_URL}/api/exams`, { headers });
       const examData = examRes.ok ? await examRes.json() : [];
       setExams(examData);
 
-      const paperRes = await fetch('/api/papers', { headers });
+      const paperRes = await fetch(`${API_URL}/api/papers`, { headers });
       const paperData = paperRes.ok ? await paperRes.json() : [];
       setPapers(paperData);
     } catch (err) {
