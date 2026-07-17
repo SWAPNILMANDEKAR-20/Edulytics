@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { API_URL } from '../../utils/api';
 import { 
   GraduationCap, Mail, Lock, Eye, EyeOff, AlertCircle, CheckCircle2 
 } from 'lucide-react';
@@ -33,7 +34,7 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
