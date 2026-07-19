@@ -41,6 +41,7 @@ const isSupabaseConfigured = isValidHttpUrl(process.env.SUPABASE_URL) &&
 const supabaseUrl = isSupabaseConfigured ? process.env.SUPABASE_URL : 'https://placeholder.supabase.co';
 const supabaseKey = isSupabaseConfigured ? process.env.SUPABASE_SERVICE_ROLE_KEY : 'placeholder';
 const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseAuth = createClient(supabaseUrl, supabaseKey, { auth: { persistSession: false } });
 
 // Multer setup for scanned sheet uploads
 const storage = multer.diskStorage({
@@ -998,7 +999,7 @@ const authMiddleware = async (req, res, next) => {
     let user;
 
     if (token) {
-      const { data: { user: authUser }, error } = await supabase.auth.getUser(token);
+      const { data: { user: authUser }, error } = await supabaseAuth.auth.getUser(token);
       if (error || !authUser) {
         return res.status(401).json({ error: 'Unauthorized: Invalid token session' });
       }
@@ -1327,7 +1328,7 @@ const extractQuestionAnswers = async (fileUrl, promptType, examOrSubmissionId) =
 };
 
 // API: Subject endpoints
-app.get('/api/subjects', authMiddleware, async (req, res) => {
+app.get(['/api/subjects', '/api/student/subjects'], authMiddleware, async (req, res) => {
   try {
     if (!isSupabaseConfigured) {
       return res.json(await getSubjects());
@@ -1673,7 +1674,7 @@ app.post('/api/student/profile', authMiddleware, async (req, res) => {
 
       // Update Supabase Auth if email changed
       if (email.toLowerCase() !== req.user.email.toLowerCase()) {
-        const { error: authErr } = await supabase.auth.admin.updateUserById(req.user.id, {
+        const { error: authErr } = await supabaseAuth.auth.admin.updateUserById(req.user.id, {
           email: email,
           user_metadata: { name: name }
         });
@@ -1711,7 +1712,7 @@ app.post('/api/student/change-password', authMiddleware, async (req, res) => {
 
     if (isSupabaseConfigured) {
       // Re-authenticate user with current password
-      const { error: signInErr } = await supabase.auth.signInWithPassword({
+      const { error: signInErr } = await supabaseAuth.auth.signInWithPassword({
         email: req.user.email,
         password: currentPassword
       });
@@ -1721,7 +1722,7 @@ app.post('/api/student/change-password', authMiddleware, async (req, res) => {
       }
 
       // Change password securely
-      const { error: updateErr } = await supabase.auth.admin.updateUserById(req.user.id, {
+      const { error: updateErr } = await supabaseAuth.auth.admin.updateUserById(req.user.id, {
         password: newPassword
       });
       if (updateErr) throw updateErr;
@@ -1893,7 +1894,7 @@ app.post('/api/professor/profile', authMiddleware, async (req, res) => {
 
       // 2. Update Supabase Auth if email changed
       if (email.toLowerCase() !== req.user.email.toLowerCase()) {
-        const { error: authErr } = await supabase.auth.admin.updateUserById(req.user.id, {
+        const { error: authErr } = await supabaseAuth.auth.admin.updateUserById(req.user.id, {
           email: email,
           user_metadata: { name: name }
         });
@@ -1929,7 +1930,7 @@ app.post('/api/professor/change-password', authMiddleware, async (req, res) => {
 
     if (isSupabaseConfigured) {
       // 1. Re-authenticate user with current password
-      const { error: signInErr } = await supabase.auth.signInWithPassword({
+      const { error: signInErr } = await supabaseAuth.auth.signInWithPassword({
         email: req.user.email,
         password: currentPassword
       });
@@ -1939,7 +1940,7 @@ app.post('/api/professor/change-password', authMiddleware, async (req, res) => {
       }
 
       // 2. Change password via admin panel securely
-      const { error: updateErr } = await supabase.auth.admin.updateUserById(req.user.id, {
+      const { error: updateErr } = await supabaseAuth.auth.admin.updateUserById(req.user.id, {
         password: newPassword
       });
       if (updateErr) throw updateErr;
@@ -5011,7 +5012,7 @@ app.post('/api/auth/register', async (req, res) => {
 
     if (isSupabaseConfigured) {
       // 1. Create in Supabase Auth using Admin Auth Client
-      const { data: authData, error: createError } = await supabase.auth.admin.createUser({
+      const { data: authData, error: createError } = await supabaseAuth.auth.admin.createUser({
         email: email.toLowerCase(),
         password: password,
         email_confirm: true,
@@ -5085,7 +5086,7 @@ app.post('/api/auth/login', async (req, res) => {
 
     if (isSupabaseConfigured) {
       // 1. Sign in via Supabase Auth
-      const { data: authData, error: loginError } = await supabase.auth.signInWithPassword({
+      const { data: authData, error: loginError } = await supabaseAuth.auth.signInWithPassword({
         email: email.toLowerCase(),
         password: password
       });
@@ -5429,7 +5430,6 @@ app.get('/api/student/dashboard/recommendations', authMiddleware, async (req, re
     res.status(500).json({ error: 'Failed to fetch recommendations' });
   }
 });
-
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   if (isSupabaseConfigured) {

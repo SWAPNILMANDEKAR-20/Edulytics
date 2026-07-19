@@ -10,13 +10,15 @@ window.fetch = async (input, init) => {
   if (userStr) {
     try {
       const user = JSON.parse(userStr);
+      init = init || {};
+      const headers = init.headers ? { ...init.headers } as any : {};
       if (user.token) {
-        init = init || {};
-        const headers = init.headers ? { ...init.headers } as any : {};
         headers['Authorization'] = `Bearer ${user.token}`;
-        headers['x-user-email'] = user.email;
-        init.headers = headers;
       }
+      if (user.email) {
+        headers['x-user-email'] = user.email;
+      }
+      init.headers = headers;
     } catch (e) {
       console.error('Fetch interceptor failed to parse user:', e);
     }
