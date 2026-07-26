@@ -1,32 +1,278 @@
-# React + TypeScript + Vite
+# 🎓 Edulytics – AI Powered Answer Sheet Evaluation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An AI-powered cloud-based web application that automates answer sheet evaluation using OCR, NLP, and Large Language Models. Edulytics enables professors to upload reference answer keys, students to submit answer sheets, and automatically generates evaluation reports with analytics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+### 👨‍🏫 Professor Module
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Secure Authentication
+- Subject & Exam Management
+- Upload Reference Answer Sheets
+- OCR-based Question Extraction
+- AI-assisted Answer Key Generation
+- Rubrics Management
+- Student Performance Analytics
+- Publish Results
 
-## Expanding the Oxlint configuration
+### 👨‍🎓 Student Module
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- Secure Login
+- Subject Enrollment
+- Upload Answer Sheets
+- Upload OMR Sheets
+- Track Submission Status
+- AI Feedback Report
+- View Results
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### 🤖 AI Evaluation Engine
+
+- OCR for handwritten/printed answer sheets
+- Gemini AI based answer extraction
+- Semantic similarity using SBERT
+- Automated Marks Calculation
+- Confidence Score Generation
+- Detailed Evaluation Report
+
+### 📊 Analytics
+
+- Class Performance
+- Average Marks
+- Pass Percentage
+- Subject-wise Analysis
+- AI Generated Insights
+
+---
+
+# 🏗️ System Architecture
+
+```
+                   React Frontend
+                         │
+                REST API (HTTPS)
+                         │
+               Node.js + Express Backend
+                         │
+      ┌──────────────────┼──────────────────┐
+      │                  │                  │
+  Supabase          Gemini API        File Storage
+ PostgreSQL       AI Evaluation      Answer Sheets
+      │                  │                  │
+      └──────────────────┼──────────────────┘
+                         │
+               Evaluation Reports
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Axios
+- React Router
+- Lucide Icons
+
+## Backend
+
+- Node.js
+- Express.js
+- Multer
+- JWT Authentication
+- bcrypt
+- PDFKit
+
+## Database
+
+- Supabase
+- PostgreSQL
+
+## AI & ML
+
+- Google Gemini API
+- SBERT
+- OCR
+- NLP
+- Semantic Similarity
+
+## Cloud
+
+- Render (Backend Deployment)
+- Vercel (Frontend Deployment)
+- Supabase Cloud Database
+- Supabase Storage
+
+---
+
+# ⚙️ Workflow
+
+1. Professor creates an exam.
+2. Uploads the reference answer sheet.
+3. OCR extracts questions.
+4. Gemini AI generates structured answer keys.
+5. Professor reviews and confirms the answer key.
+6. Students upload answer sheets.
+7. OCR extracts student responses.
+8. SBERT compares answers with reference answers.
+9. Marks are calculated automatically.
+10. Reports are generated.
+11. Analytics dashboard updates.
+
+---
+
+# 📂 Project Structure
+
+```
+Edulytics/
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── assets/
+│
+├── backend/
+│   ├── routes/
+│   ├── middleware/
+│   ├── uploads/
+│   ├── data/
+│   ├── utils/
+│   └── server.js
+│
+└── README.md
+```
+
+---
+
+# ☁️ Cloud Computing Integration
+
+Edulytics is designed as a cloud-native application.
+
+### Platform as a Service (PaaS)
+
+- Render hosts the backend APIs.
+
+### Database as a Service (DBaaS)
+
+- Supabase PostgreSQL stores users, exams, submissions, and results.
+
+### Storage as a Service
+
+- Supabase Storage stores uploaded answer sheets.
+
+### AI as a Service
+
+- Google Gemini API performs AI-based evaluation.
+
+### Software as a Service (SaaS)
+
+- Professors and students access the application through a web browser.
+
+---
+
+# 🔒 Security
+
+- JWT Authentication
+- Password Hashing using bcrypt
+- HTTPS Communication
+- Environment Variables
+- Role-Based Access Control
+- Secure Cloud Database
+
+---
+
+# 📈 Future Improvements
+
+- Real-time Evaluation
+- Multi-language Support
+- Plagiarism Detection
+- Voice Feedback
+- AI-based Rubric Generation
+- Mobile Application
+- Kubernetes Deployment
+- Docker Support
+
+
+# 📦 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/Edulytics.git
+```
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file
+
+```env
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+JWT_SECRET=
+GEMINI_API_KEY=
+PORT=5000
+```
+
+---
+
+# 📊 Key Features
+
+✅ AI Powered Evaluation
+
+✅ OCR Answer Extraction
+
+✅ Semantic Similarity (SBERT)
+
+✅ Cloud Deployment
+
+✅ Professor Dashboard
+
+✅ Student Dashboard
+
+✅ OMR Evaluation
+
+✅ Analytics Dashboard
+
+✅ Automated Result Generation
+
+---
+
+# 👨‍💻 Developed By
+
+**Swapnil Avinash Mandekar**
+
+B.Tech Computer Science (AI & ML)
+
+Vishwakarma Institute of Technology, Pune
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
