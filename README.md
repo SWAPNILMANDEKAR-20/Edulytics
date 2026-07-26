@@ -269,8 +269,6 @@ PORT=5000
 
 B.Tech Computer Science (AI & ML)
 
-Vishwakarma Institute of Technology, Pune
-
 ---
 
 # 📄 License
