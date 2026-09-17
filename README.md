@@ -45,6 +45,12 @@ An AI-powered cloud-based web application that automates answer sheet evaluation
 - AI Generated Insights
 
 ---
+Professor Answer-Key Workflow
+<img width="2738" height="2290" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/55d1269e-7629-43f5-8d30-f9be0ffcfbe0" />
+
+Student Answer Evaluation Workflow
+<img width="3960" height="2274" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/e9ba7ec3-7ac1-4731-b56c-08b7cf643865" />
+
 
 # 🏗️ System Architecture
 
